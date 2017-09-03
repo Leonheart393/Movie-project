@@ -24,5 +24,28 @@ namespace Movie_project
         {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            if (userNameText.Text == "Gajen" && passwordBox.Password == "fantasy")
+            {
+                MessageBox.Show("You logged in!");
+                this.Hide();
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.ShowDialog();
+            }             
+            else
+                MessageBox.Show("Incorrect credentials");
+        }
+
+        private void pnlMainGrid_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("You clicked me at " + e.GetPosition(this).ToString());
+        }
+
+        private void pnlMainGrid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show(e.Device.ToString());
+        }
     }
 }
